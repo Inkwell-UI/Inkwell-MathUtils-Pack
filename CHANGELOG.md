@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+**Move Towards** (`mathutils/MoveTowards@1`): the template did not compile in Flash (two variables declared in one statement); it now declares them separately. Same pins and behaviour. Use 0.1.1 instead of 0.1.0 if a graph has this node.
+
 ## 0.1.0
 
 First release: 37 pure math nodes (category Math), all `mathutils/<Kind>@1`.
