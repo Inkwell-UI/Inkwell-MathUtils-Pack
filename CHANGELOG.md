@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+Six bitwise nodes (pure, category Math): **Bit And, Bit Or, Bit Xor, Bit Not, Shift Left, Shift Right** (`mathutils/BitAnd@1`...). They work on 32-bit whole numbers (inputs are cut to integers, shifts use the low 5 bits of `bits`, Shift Right keeps the sign). No existing node changed.
+
 ## 0.1.3
 
 Supports any Inkwell from 0.5.0 on (compatible.tool is now >=0.5.0 instead of ^0.x). No node, pin, field or template changed.

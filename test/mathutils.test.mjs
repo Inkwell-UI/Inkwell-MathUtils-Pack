@@ -15,7 +15,7 @@ test("every template agrees with its pins and fields", () => {
 });
 
 test("every node is pure, category Math, one 'value' output", () => {
-  assert.equal(nodes.length, 37);
+  assert.equal(nodes.length, 43);
   for (const n of nodes) {
     assert.equal(n.def.pure, true, n.id);
     assert.equal(n.def.category, "Math", n.id);
@@ -75,6 +75,14 @@ const cases = [
   ["Sqrt", { value: -1 }, {}, 0],
   ["Lerp", { a: 0, b: 10, t: 0.25 }, {}, 2.5],
   ["Round", { value: 2.5 }, {}, 3],
+  ["BitAnd", { a: 12, b: 10 }, {}, 8],
+  ["BitOr", { a: 12, b: 10 }, {}, 14],
+  ["BitXor", { a: 12, b: 10 }, {}, 6],
+  ["BitNot", { value: 0 }, {}, -1],
+  ["BitAnd", { a: 7.9, b: 3 }, {}, 3],
+  ["ShiftLeft", { value: 1, bits: 4 }, {}, 16],
+  ["ShiftLeft", { value: 1, bits: 33 }, {}, 2],
+  ["ShiftRight", { value: -16, bits: 2 }, {}, -4],
 ];
 for (const [kind, inputs, fields, want] of cases) {
   test(`${kind} ${JSON.stringify(inputs)} ${JSON.stringify(fields)}`, () => assert.equal(run(kind, inputs, fields), want));
